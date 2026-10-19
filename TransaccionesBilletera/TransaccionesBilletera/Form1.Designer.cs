@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtDestino = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,13 +50,12 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.cmbTipo = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtCodigoReversion = new System.Windows.Forms.TextBox();
-            this.btnSolicitarReversion = new System.Windows.Forms.Button();
-            this.btnProcesarReversion = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.lblPendientes = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnProcesarReversion = new System.Windows.Forms.Button();
+            this.btnSolicitarReversion = new System.Windows.Forms.Button();
+            this.txtCodigoReversion = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOperaciones)).BeginInit();
@@ -91,6 +91,15 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrar operación";
+            // 
+            // cmbTipo
+            // 
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Location = new System.Drawing.Point(113, 55);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipo.TabIndex = 11;
             // 
             // btnRegistrar
             // 
@@ -264,50 +273,17 @@
             this.groupBox4.Size = new System.Drawing.Size(292, 224);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Reversión";
+            this.groupBox4.Text = "Gestión de Reversiones";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
-            // cmbTipo
+            // lblPendientes
             // 
-            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(113, 55);
-            this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipo.TabIndex = 11;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Codigo";
-            // 
-            // txtCodigoReversion
-            // 
-            this.txtCodigoReversion.Location = new System.Drawing.Point(53, 32);
-            this.txtCodigoReversion.Name = "txtCodigoReversion";
-            this.txtCodigoReversion.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigoReversion.TabIndex = 1;
-            // 
-            // btnSolicitarReversion
-            // 
-            this.btnSolicitarReversion.Location = new System.Drawing.Point(10, 71);
-            this.btnSolicitarReversion.Name = "btnSolicitarReversion";
-            this.btnSolicitarReversion.Size = new System.Drawing.Size(75, 23);
-            this.btnSolicitarReversion.TabIndex = 2;
-            this.btnSolicitarReversion.Text = "Solicitar reversión";
-            this.btnSolicitarReversion.UseVisualStyleBackColor = true;
-            // 
-            // btnProcesarReversion
-            // 
-            this.btnProcesarReversion.Location = new System.Drawing.Point(123, 70);
-            this.btnProcesarReversion.Name = "btnProcesarReversion";
-            this.btnProcesarReversion.Size = new System.Drawing.Size(75, 23);
-            this.btnProcesarReversion.TabIndex = 3;
-            this.btnProcesarReversion.Text = "Procesar reversión";
-            this.btnProcesarReversion.UseVisualStyleBackColor = true;
+            this.lblPendientes.AutoSize = true;
+            this.lblPendientes.Location = new System.Drawing.Point(7, 138);
+            this.lblPendientes.Name = "lblPendientes";
+            this.lblPendientes.Size = new System.Drawing.Size(13, 13);
+            this.lblPendientes.TabIndex = 5;
+            this.lblPendientes.Text = "0";
             // 
             // label9
             // 
@@ -318,14 +294,40 @@
             this.label9.TabIndex = 4;
             this.label9.Text = "Solicitudes pendientes:";
             // 
-            // lblPendientes
+            // btnProcesarReversion
             // 
-            this.lblPendientes.AutoSize = true;
-            this.lblPendientes.Location = new System.Drawing.Point(7, 138);
-            this.lblPendientes.Name = "lblPendientes";
-            this.lblPendientes.Size = new System.Drawing.Size(13, 13);
-            this.lblPendientes.TabIndex = 5;
-            this.lblPendientes.Text = "0";
+            this.btnProcesarReversion.Location = new System.Drawing.Point(123, 70);
+            this.btnProcesarReversion.Name = "btnProcesarReversion";
+            this.btnProcesarReversion.Size = new System.Drawing.Size(75, 23);
+            this.btnProcesarReversion.TabIndex = 3;
+            this.btnProcesarReversion.Text = "Procesar reversión";
+            this.btnProcesarReversion.UseVisualStyleBackColor = true;
+            // 
+            // btnSolicitarReversion
+            // 
+            this.btnSolicitarReversion.Location = new System.Drawing.Point(10, 71);
+            this.btnSolicitarReversion.Name = "btnSolicitarReversion";
+            this.btnSolicitarReversion.Size = new System.Drawing.Size(75, 23);
+            this.btnSolicitarReversion.TabIndex = 2;
+            this.btnSolicitarReversion.Text = "Solicitar reversión";
+            this.btnSolicitarReversion.UseVisualStyleBackColor = true;
+            this.btnSolicitarReversion.Click += new System.EventHandler(this.btnSolicitarReversion_Click_1);
+            // 
+            // txtCodigoReversion
+            // 
+            this.txtCodigoReversion.Location = new System.Drawing.Point(53, 32);
+            this.txtCodigoReversion.Name = "txtCodigoReversion";
+            this.txtCodigoReversion.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigoReversion.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Codigo";
             // 
             // Form1
             // 
@@ -339,6 +341,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Transacciones de Billetera  ";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

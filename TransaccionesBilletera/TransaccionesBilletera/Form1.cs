@@ -162,7 +162,7 @@ namespace TransaccionesBilletera
 
             MostrarHistorial();
 
-            MessageBox.Show("Solicitud añadida a la pila.");
+            MessageBox.Show("Operación en cola de reversión.");
         }
 
         private void btnProcesarReversion_Click(
@@ -214,5 +214,18 @@ namespace TransaccionesBilletera
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnSolicitarReversion_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
