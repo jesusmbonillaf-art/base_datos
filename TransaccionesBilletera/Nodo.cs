@@ -9,6 +9,10 @@ namespace TransaccionesBilletera
     internal class Nodo
     {
         public string info;
+        public string codigo;
         public Nodo sgte;
+        public Nodo operacion;
+        public Nodo izq;
+        public Nodo der;
     }
 }

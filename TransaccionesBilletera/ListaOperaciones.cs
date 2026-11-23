@@ -9,8 +9,10 @@ namespace TransaccionesBilletera
     internal class ListaOperaciones
     {
         public Nodo inicio;
+        public int comparaciones;   // nodos revisados en la última búsqueda
 
-        public void Adicionar(string dato)
+        // Agrega al final y devuelve el nodo creado (el árbol lo indexa).
+        public Nodo Adicionar(string dato)
         {
             Nodo nuevo = new Nodo();
 
@@ -32,14 +34,19 @@ namespace TransaccionesBilletera
 
                 p.sgte = nuevo;
             }
+
+            return nuevo;
         }
 
         public string Buscar(string codigo)
         {
+            comparaciones = 0;
             Nodo p = inicio;
 
             while (p != null)
             {
+                comparaciones++;
+
                 string[] datos = p.info.Split('|');
 
                 if (datos[0] == codigo)
